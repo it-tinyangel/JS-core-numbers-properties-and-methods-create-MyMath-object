@@ -2,7 +2,8 @@ const MyMath = {
 	PI: 3.14159265359,
 
 	pow: function (number, degree) {
-		if (isNaN(number) || isNaN(degree) || !isFinite(number) || !isFinite(degree)) {
+		// if (isNaN(number) || isNaN(degree) || !isFinite(number) || !isFinite(degree)) {
+		if (typeof number !== 'number' || typeof degree !== 'degree' || !isFinite(number) || !isFinite(degree)) {
 			return 'Error: Please, enter a numbers.';
 		}
 		let result = 1;
@@ -13,7 +14,7 @@ const MyMath = {
 	},
 
 	abs: function (number) {
-		if (isNaN(number) || !isFinite(number)) {
+		if (typeof number !== 'number' || !isFinite(number)) {
 			return 'Error: Please, enter a number.';
 		}
 		return number < 0 ? -number : number;
@@ -25,7 +26,7 @@ const MyMath = {
 		}
 		let maxNumber = Number.NEGATIVE_INFINITY;
 		for (let i = 0; i < args.length; i++) {
-			if (isNaN(args[i]) || !isFinite(args[i])) {
+			if (typeof args[i] !== 'number' || !isFinite(args[i])) {
 				return 'Error: Please, enter numeric value for all numbers.';
 			}
 			if (args[i] > maxNumber) {
@@ -41,7 +42,7 @@ const MyMath = {
 		}
 		let minNumber = Number.POSITIVE_INFINITY;
 		for (let i = 0; i < args.length; i++) {
-			if (isNaN(args[i]) || !isFinite(args[i])) {
+			if (typeof args[i] !== 'number' || !isFinite(args[i])) {
 				return 'Error: Please, enter numeric value for all numbers.';
 			}
 			if (args[i] < minNumber) {
